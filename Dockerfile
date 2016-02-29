@@ -8,4 +8,4 @@ RUN /etc/init.d/rpcbind start
 VOLUME /mnt
 
 #mount
-RUN mount nfshost:/nfs /mnt
+CMD mount nfshost:/nfs /mnt
