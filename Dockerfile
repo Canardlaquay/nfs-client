@@ -3,9 +3,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get clean
 
 #nfs client install
 RUN apt-get install -y nfs-common
-RUN /etc/init.d/rpcbind start
 
 VOLUME /mnt
 
 #mount
-CMD mount nfshost:/nfs /mnt
+CMD /etc/init.d/rpcbind start && mount nfshost:/nfs /mnt
